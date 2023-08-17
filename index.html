@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function preventArrowKeyScrolling(event) {
+            // Check if the pressed key is an arrow key (Arrow Left, Arrow Up, Arrow Right, Arrow Down)
+            if ([37, 38, 39, 40].includes(event.keyCode)) {
+                event.preventDefault(); // Prevent the default scrolling behavior
+            }
+        }
+    
+        // Attach the event listener to the document
+        document.addEventListener('keydown', preventArrowKeyScrolling);
+    </script>
+    <!-- <style>
+        *{
+            border: 1px solid red
+        }
+    </style> -->
     <title>Slide Puzzle</title>
     
 </head>
-<body>
-    <div class = "styling">
-        <div id="puzzle-container"></div>
+<body class = "background-game">
+    <div>
+        <button class = "reset-button" id = "resetButton" style = "position: relative;">Reset Game</button>
+        <button class = "reset-button" id = "cheatButton" style = "position: relative;">Cheat Button</button>
     </div>
+    <div style = "display: flex;">
+        <div class = "styling">
+            <div id="puzzle-container"></div>
+        </div>
+        <div style = "translate: 200px 200px;">
+            test
+        </div>
+        
+    </div>
+
     
 </body>
 <script src = "app.js"></script>
